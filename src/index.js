@@ -7,7 +7,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/airo-test/'>
+    <BrowserRouter basename='/airo-test'>
       <App />
     </BrowserRouter>    
   </React.StrictMode>

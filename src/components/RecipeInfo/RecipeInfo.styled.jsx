@@ -5,7 +5,7 @@ export const RecipesInfoStyled = styled.div`
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 40px 10px;
     background-color: #f3f1f1;
 
     border: 2px solid #000000;
@@ -54,6 +54,7 @@ export const DescriptionThumbStyled = styled.div`
     }
 
     h2 {
+        /* margin-top: 24px; */
         font-size: 40px;
     }
 
