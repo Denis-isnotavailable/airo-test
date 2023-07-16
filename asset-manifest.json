@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/airo-test/static/css/main.867c0457.css",
+    "main.js": "/airo-test/static/js/main.0efe4b4d.js",
+    "static/js/839.e9be333c.chunk.js": "/airo-test/static/js/839.e9be333c.chunk.js",
+    "static/js/43.ab1c1684.chunk.js": "/airo-test/static/js/43.ab1c1684.chunk.js",
+    "static/js/134.fae8fb89.chunk.js": "/airo-test/static/js/134.fae8fb89.chunk.js",
+    "index.html": "/airo-test/index.html",
+    "main.867c0457.css.map": "/airo-test/static/css/main.867c0457.css.map",
+    "main.0efe4b4d.js.map": "/airo-test/static/js/main.0efe4b4d.js.map",
+    "839.e9be333c.chunk.js.map": "/airo-test/static/js/839.e9be333c.chunk.js.map",
+    "43.ab1c1684.chunk.js.map": "/airo-test/static/js/43.ab1c1684.chunk.js.map",
+    "134.fae8fb89.chunk.js.map": "/airo-test/static/js/134.fae8fb89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.867c0457.css",
+    "static/js/main.0efe4b4d.js"
+  ]
+}
