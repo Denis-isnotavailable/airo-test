@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import { RecipesListStyled } from './RecipesList.styled'
+import { RecipesListStyled, ButtonStyled, ButtonsListStyled } from './RecipesList.styled'
 import { useRecipes } from '../../zustand/zustand';
 import RecipesItem from '../RecipesItem/RecipesItem';
 
 function RecipesList() {
-  // const [scrollCount, setScrollCount] = useState(5);
   const { recipes, page, fetch, nextPage, listToDeleteRecipes, clearListToDeleteRecipes, deleteRecipe, scrollCount, setScrollCount } = useRecipes();
   
   useEffect(() => {  
@@ -33,7 +32,8 @@ function RecipesList() {
      window.addEventListener('scroll', handleScroll);
      return () => window.removeEventListener('scroll', handleScroll);     
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scrollCount]);
+   }, [scrollCount]);
+  
 
   const handleDeleteRecipes = () => {
     listToDeleteRecipes.forEach(recId => {
@@ -45,12 +45,17 @@ function RecipesList() {
 
   return (
     <RecipesListStyled>     
-      <button type='button' onClick={handleDeleteRecipes} disabled={listToDeleteRecipes.length === 0}>Delete</button>
+      <ButtonStyled type='button' onClick={handleDeleteRecipes} disabled={listToDeleteRecipes.length === 0}>Delete</ButtonStyled>
 
-      <ul>{recipes.slice(scrollCount - 5, scrollCount).map(recipe => <RecipesItem key={recipe?.id} recipe={recipe} />)}</ul>      
+      <ul>{recipes.slice(scrollCount - 5, scrollCount).map(recipe => <RecipesItem key={recipe?.id} recipe={recipe} />)}</ul>
+      
+      {scrollCount === 15 && <ButtonsListStyled>
+        <li><button onClick={() => setScrollCount(-15)} type='button'>1</button></li>
+        <li><button onClick={() => setScrollCount(-10)} type='button'>2</button></li>
+      </ButtonsListStyled>}
       
     </RecipesListStyled>
   )
 }
 
-export default RecipesList
+export default RecipesList;
