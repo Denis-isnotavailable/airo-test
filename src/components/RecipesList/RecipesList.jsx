@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
-import { RecipesListStyled, ButtonStyled, ButtonsListStyled } from './RecipesList.styled'
+import React, { useEffect } from 'react';
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { RecipesListStyled, ButtonStyled, ButtonUpStyled } from './RecipesList.styled';
 import { useRecipes } from '../../zustand/zustand';
 import RecipesItem from '../RecipesItem/RecipesItem';
 
@@ -47,12 +48,9 @@ function RecipesList() {
     <RecipesListStyled>     
       <ButtonStyled type='button' onClick={handleDeleteRecipes} disabled={listToDeleteRecipes.length === 0}>Delete</ButtonStyled>
 
+      {scrollCount > 5 && <ButtonUpStyled onClick={() => setScrollCount(-5)} type='button'><AiOutlineArrowUp size={30}/></ButtonUpStyled>}
+
       <ul>{recipes.slice(scrollCount - 5, scrollCount).map(recipe => <RecipesItem key={recipe?.id} recipe={recipe} />)}</ul>
-      
-      {scrollCount === 15 && <ButtonsListStyled>
-        <li><button onClick={() => setScrollCount(-15)} type='button'>1</button></li>
-        <li><button onClick={() => setScrollCount(-10)} type='button'>2</button></li>
-      </ButtonsListStyled>}
       
     </RecipesListStyled>
   )
