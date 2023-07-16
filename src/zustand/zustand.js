@@ -5,6 +5,9 @@ export const useRecipes = create((set) => ({
   recipes: [],
   page: 1,
   listToDeleteRecipes: [],
+  scrollCount: 5,
+
+  setScrollCount: (num) => set((state) => ({scrollCount: state.scrollCount + num})),
 
   togglelistToDeleteRecipes: (id) => set((state) => {    
     if (state.listToDeleteRecipes.includes(id)) {      
@@ -24,7 +27,7 @@ export const useRecipes = create((set) => ({
     const res = state.recipes.filter(({id}) => id !== resId);
     return{ recipes: res }
   }),
-  
+
   fetch: async (page) => {
     try {
       const response = await fetch(`https://api.punkapi.com/v2/beers?page=${page}`);

@@ -10,7 +10,8 @@ function RecipeInfo() {
     const [recipe, setRecipe] = useState({});
     const { recipes } = useRecipes();
 
-    useEffect(() => {    
+    useEffect(() => {  
+        document.documentElement.scrollTo(0, 0);
         const res = recipes.find(recipe => +id === recipe.id);  
         
         if (res) {
